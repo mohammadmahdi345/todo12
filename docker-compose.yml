@@ -19,7 +19,8 @@ services:
       context: .
     restart: always
     volumes:
-      - .:/app
+      # فقط کد backend رو به داخل کانتینر منتقل کن
+      - ./backend:/app/backend
     ports:
       - "8007:8000"
     container_name: planning_container
