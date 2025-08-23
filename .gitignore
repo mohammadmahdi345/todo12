@@ -1,13 +1,26 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-env/
 venv/
-*.sqlite3
-/staticfiles/
+
+# Env files
+.env
+
+# Django
+staticfiles/
 media/
-.DS_Store
-.idea/
-.vscode/
+db.sqlite3
+
+# Docker
 *.log
+
+# Node
+node_modules/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
