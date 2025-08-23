@@ -1,0 +1,800 @@
+/* کلیت صفحه */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  color: #333;
+  margin: 0;
+  padding: 0 20px;
+  direction: rtl;
+}
+
+/* خوش آمدید */
+h1.welcome {
+  text-align: center;
+  margin-top: 30px;
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+/* لینک‌ها */
+a.login-link, a.program-link, a.tasks-link {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+  transition: background-color 0.3s ease;
+}
+
+a.login-link {
+  position: relative;
+  bottom: 100px;
+}
+
+.task-program {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+a.program-link {
+  transition: all 0.4s;
+}
+a.tasks-link {
+  transition: all 0.4s;
+}
+
+a.login-link {
+  background-color: #3498db;
+}
+
+a.login-link:hover {
+  background-color: #2980b9;
+}
+
+a.program-link {
+  background-color: #27ae60;
+}
+
+a.program-link:hover {
+  background-color: #1e8449;
+  transform: scale(1.5);
+}
+
+a.tasks-link {
+  background-color: #27ae60;
+} 
+
+a.tasks-link:hover {
+  background-color: #1e8449;
+  transform: scale(1.5);
+}
+
+/* فرم‌ها */
+.login-wrapper, .program-form, .timeslot-form {
+  max-width: 400px;
+  margin: 150px auto 50px auto;
+  padding: 25px 30px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-wrapper {
+  padding-bottom: 0;
+}
+
+/* فرم لاگین */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* فرم برنامه */
+.program-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.program-input {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  direction: ltr;
+}
+
+.program-input:focus {
+  border-color: #27ae60; /* رنگ سبز */
+  outline: none; /* جلوگیری از outline آبی پیش‌فرض */
+}
+
+/* فرم تایم اسلات */
+.timeslot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* گروه ورودی‌ها (label + input) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* لیبل‌ها */
+.form-label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 1rem;
+}
+
+/* ورودی‌ها */
+.form-input {
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline-color: #3498db;
+  transition: border-color 0.3s ease;
+  direction: ltr;
+}
+
+.form-input:focus {
+  border-color: #3498db;
+}
+
+/* دکمه لاگین */
+.login-submit-btn,
+.program-submit-btn,
+.timeslot-submit-btn {
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+/* دکمه لاگین */
+.login-submit-btn {
+  background-color: #3498db;
+}
+
+.login-submit-btn:hover:not(:disabled) {
+  background-color: #217dbb;
+}
+
+/* دکمه ثبت برنامه */
+.program-submit-btn {
+  background-color: #27ae60;
+}
+
+.program-submit-btn:hover {
+  background-color: #1e8449;
+}
+
+/* دکمه تایید تایم اسلات */
+.timeslot-submit-btn {
+  background-color: #3498db;
+}
+
+.timeslot-submit-btn:hover {
+  background-color: #217dbb;
+}
+
+/* پیام‌های خطا */
+.error-messages {
+  background-color: #fce4e4;
+  color: #e74c3c;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* پیام موفقیت برنامه */
+.program-message {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #e74c3c;
+}
+
+/* پیام تایم اسلات */
+.timeslot-message {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #e74c3c; /* موفقیت */
+}
+
+/* تیتر تایم اسلات */
+.timeslot-form h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+/* پیام خطا لاگین */
+.login-message {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #e74c3c;
+  text-align: center;
+}
+
+/* پیام ثبت نام زیر فرم لاگین */
+.register-message {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 1rem;
+}
+
+.register-message p {
+  margin: 0;
+}
+
+.register-link {
+  color: #923152;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #c91337;
+  text-decoration: none;
+}
+
+/* وظایف (تسک‌ها) */
+.tasks-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255 255 255 / 0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+  direction: rtl;
+  color: #2c3e50;
+}
+
+.tasks-section {
+  margin-bottom: 40px;
+}
+
+.tasks-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 3px solid #27ae60;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  color: #27ae60;
+}
+
+.completed-tasks .tasks-title {
+  border-color: #27ae60; /* سبز */
+  color: #27ae60;
+}
+
+.incomplete-tasks .tasks-title {
+  border-color: #3498db; /* آبی */
+  color: #3498db;
+}
+
+.task-card {
+  background-color: #fff;
+  padding: 20px 25px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 0.12);
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-card:hover {
+  box-shadow: 0 10px 25px rgb(0 0 0 / 0.15);
+  transform: translateY(-5px);
+}
+
+.task-card.completed {
+  border-left: 6px solid #27ae60;
+}
+
+.task-card.incomplete {
+  border-left: 6px solid #3498db;
+}
+
+/* عنوان تسک با استایل جدید */
+.task-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a2e35;
+  letter-spacing: 0.04em;
+  margin-bottom: 0;
+  position: relative;
+  padding-right: 24px; /* معکوس padding */
+  text-align: right;
+  line-height: 1.3;
+
+  display: flex;
+  justify-content: flex-start; /* از flex-end به flex-start تغییر دادم */
+  align-items: center;
+  gap: 8px;
+}
+
+.task-title::before {
+  content: "عنوان:";
+  font-size: 1rem;
+  font-weight: 700;
+  color: #27ae60;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: static;
+}
+
+/* توضیح تسک با استایل جدید */
+.task-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  font-style: italic;
+  margin-top: 0;
+  position: relative;
+  padding-right: 24px; /* معکوس padding */
+  text-align: right;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+
+  display: flex;
+  justify-content: flex-start; /* تغییر به flex-start */
+  align-items: center;
+  gap: 8px;
+}
+
+.task-description::before {
+  content: "توضیح:";
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3498db;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: static;
+}
+
+
+/* تاریخ */
+.task-date {
+  font-size: 0.95rem;
+  color: #999;
+  text-align: left;
+  direction: ltr;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* زمان شروع و پایان */
+.task-time {
+  font-size: 1rem;
+  color: #2c3e50;
+  background-color: #f0f8ff;
+  padding: 10px 16px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 8px;
+  box-shadow: inset 0 0 10px rgba(41, 128, 185, 0.2);
+  font-weight: 600;
+}
+
+.task-time span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #217dbb;
+}
+
+.task-time span::before {
+  content: "⏰";
+  font-size: 1.2rem;
+}
+
+/* برچسب‌های فارسی زمان */
+.task-time .start-time::before {
+  content: "زمان شروع:";
+  color: #3498db;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.task-time .end-time::before {
+  content: "زمان پایان:";
+  color: #2980b9;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+/* پیام وقتی تسک نیست */
+.no-tasks-message {
+  color: #999;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* ورودی نامعتبر */
+.form-input.invalid {
+  border-color: #e74c3c;
+  background-color: #fff5f5;
+}
+
+.input-error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.task-button8 {
+  padding: 10px 20px;
+  background-color: #27ae60;   /* سبز مشابه رنگ تسک‌های انجام شده */
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 7px rgba(39, 174, 96, 0.6);
+  transition: background-color 0.3s ease, transform 0.25s ease;
+  align-self: flex-start; /* دکمه سمت چپ کارت قرار بگیره */
+}
+
+.task-button8:hover {
+  background-color: #1e8449;  /* سبز تیره‌تر */
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(30, 132, 73, 0.8);
+}
+
+.task-button8:active {
+  transform: scale(0.95);
+}
+
+input {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container کلی کامپوننت وضعیت */
+.task-status-container {
+  max-width: 600px;
+  margin: 50px auto 80px auto;
+  padding: 25px 30px;
+  background-color: rgba(255 255 255 / 0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+  direction: rtl;
+  color: #2c3e50;
+}
+
+/* ردیف هدر: عنوان + دکمه کنار هم */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* تیتر وضعیت */
+.task-status-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin: 0;
+}
+
+/* دکمه بازگشت به تسک‌ها */
+.back-to-tasks-btn {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 3px 7px rgba(52, 152, 219, 0.6);
+  transition: background-color 0.3s ease, transform 0.25s ease;
+}
+
+.back-to-tasks-btn:hover {
+  background-color: #217dbb;
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(33, 125, 187, 0.8);
+}
+
+/* لیست وضعیت */
+.status-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.status-list li {
+  margin-bottom: 12px;
+}
+
+
+.task-status {
+  display: inline-block;
+  margin: 30px auto 0 auto;
+  padding: 12px 28px;
+  background-color: #27ae60; /* سبز */
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.6);
+  transition: background-color 0.3s ease, transform 0.25s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* وسط‌چین کردن دکمه */
+.tasks-container > .task-status {
+  display: block;
+  max-width: 220px;
+}
+
+/* افکت هاور */
+.task-status:hover {
+  background-color: #1e8449; /* سبز تیره‌تر */
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(30, 132, 73, 0.8);
+}
+
+.music-player-container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255 255 255 / 0.9);
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column; /* عمودی */
+  align-items: center;
+  gap: 8px;
+  z-index: 1000;
+  direction: rtl;
+  width: 260px; /* عرض ثابت برای بهتر بودن شکل */
+}
+
+.music-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.music-btn {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 400;
+  transition: background-color 0.3s ease, transform 0.25s ease;
+  flex: 1;
+  text-align: center;
+  user-select: none;
+}
+
+.prev-btn {
+  background-color: #8e44ad; /* بنفش */
+  color: white;
+}
+
+.prev-btn:hover {
+  background-color: #6c3483;
+  transform: scale(1.05);
+}
+
+.play-pause-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.play-pause-btn:hover {
+  background-color: #217dbb;
+  transform: scale(1.05);
+}
+
+.next-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.next-btn:hover {
+  background-color: #1e8449;
+  transform: scale(1.05);
+}
+
+.music-player-container audio {
+  width: 100%;
+  outline: none;
+  margin-top: 6px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+}
+
+.volume-control {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background-color: rgba(52, 152, 219, 0.1); /* یک رنگ آبی کم‌رنگ ملایم */
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.volume-label {
+  font-weight: 500;
+  color: #217dbb; /* رنگ مشابه هاور دکمه play */
+  min-width: 40px;
+  user-select: none;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #3498db 0%, #27ae60 100%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.volume-slider:hover {
+  background: linear-gradient(90deg, #217dbb 0%, #1e8449 100%);
+}
+
+/* استایل مخصوص اسلایدر در مرورگرهای مختلف */
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #3498db;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  margin-top: -6px; /* تا وسط خط بیفته */
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  border-color: #217dbb;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #3498db;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.volume-slider::-moz-range-thumb:hover {
+  border-color: #217dbb;
+}
+
+
+.motivational-card {
+  max-width: 600px;
+  margin: 40px auto 60px auto; /* فاصله بیشتر از بالا و پایین */
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.3),
+    0 4px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-align: center;
+  user-select: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.motivational-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 30px rgba(0, 0, 0, 0.45),
+    0 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* لایه نیمه شفاف روی عکس */
+.motivational-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%);
+  border-radius: 16px;
+  z-index: 0;
+}
+
+.quote-text, .quote-author, .next-quote-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.quote-text {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.quote-author {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Georgia', serif;
+}
+
+.next-quote-btn {
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(255, 111, 97, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.next-quote-btn:hover {
+  background-color: #ff3b2e;
+  box-shadow: 0 6px 14px rgba(255, 59, 46, 0.8);
+  transform: scale(1.05);
+}
+
+.next-quote-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 7px rgba(255, 59, 46, 0.6);
+}
