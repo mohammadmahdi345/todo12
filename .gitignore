@@ -28,3 +28,6 @@ build/
 # Node frontend
 frontend/node_modules/
 frontend/build/
+
+Dockerfile
+docker-compose
