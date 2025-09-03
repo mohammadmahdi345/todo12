@@ -10,7 +10,8 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'unsafe-secret-key-for-dev-only')
 DEBUG = os.getenv('DJANGO_DEBUG', 'True').lower() in ['true', '1', 'yes']
 
 # میزبان‌های مجاز (localhost و 127.0.0.1 پیش‌فرض)
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["*"]
+
 
 
 # برای محیط تست، ریدایرکت HTTPS رو غیرفعال کن
