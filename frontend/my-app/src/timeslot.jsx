@@ -51,7 +51,7 @@ const Timeslot = () => {
             setErrors({});  // اگر اعتبارسنجی موفق بود، خطاها را پاک می‌کنیم
 
             // ارسال درخواست به سرور
-            const response = await axios.post(`http://localhost:8007/time/${pk}/`, time);
+            const response = await axios.post(`https://todo12-2.onrender.com/time/${pk}/`, time);
             setMessage('تایم با موفقیت ثبت شد');
             navigate('/')
         } catch (err) {

@@ -18,7 +18,7 @@ const TaskStatus = () => {
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const response = await axios.get('http://localhost:8007/task-status/');
+        const response = await axios.get('https://todo12-2.onrender.com/task-status/');
         setStatus(response.data);
       } catch (err) {
         setError('خطا در دریافت وضعیت تسک‌ها');

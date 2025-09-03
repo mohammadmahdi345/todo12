@@ -57,7 +57,7 @@ const Register = () => {
     if (result) {
       try {
         setSending(true);
-        const response = await axios.post('http://localhost:8007/register/', result);
+        const response = await axios.post('https://todo12-2.onrender.com/register/', result);
         console.log(response.data.access_token);
         localStorage.setItem('token', response.data.access_token);
         setMessage('ثبت‌نام با موفقیت انجام شد');

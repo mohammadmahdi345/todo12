@@ -10,7 +10,7 @@ const Tasks = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:8007/task/');
+      const response = await axios.get('https://todo12-2.onrender.com/task/');
       const tasks = response.data;
 
       const completed = tasks.filter(task => task.completed === true);
@@ -26,7 +26,7 @@ const Tasks = () => {
 
   const handelClick = async (taskid) => {
     try {
-      await axios.patch(`http://localhost:8007/task-button/${taskid}/`);
+      await axios.patch(`https://todo12-2.onrender.com/task-button/${taskid}/`);
       await fetchTasks();  // 👈 بروزرسانی لیست بعد از PATCH
     } catch (error) {
       console.error("Error completing task:", error);
