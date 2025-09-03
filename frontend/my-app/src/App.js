@@ -19,37 +19,37 @@ class App extends Component {
     }
 
     async componentDidMount() {
-    const token = localStorage.getItem('token');
-    console.log(token);
+        const token = localStorage.getItem('token');
+        console.log(token);
 
-    if(token){
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    }
-    
-    if (!token) {
-        this.setState({ user: null });
-        return;
-    }
-    
-
-
-    try {
-        const response = await axios.get('http://localhost:8007/user/', {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-
-        // چون response.data خودش کاربره
-        this.setState({ user: response.data });
-        console.log(response.data);
+        if(token){
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        }
+        
+        if (!token) {
+            this.setState({ user: null });
+            return;
+        }
         
 
-    } catch (error) {
-        console.log('Error fetching user:', error);
-        this.setState({ user: null });
-        console.log(this.state.user);
-    }
+
+        try {
+            const response = await axios.get('http://localhost:8007/user/', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            // چون response.data خودش کاربره
+            this.setState({ user: response.data });
+            console.log(response.data);
+            
+
+        } catch (error) {
+            console.log('Error fetching user:', error);
+            this.setState({ user: null });
+            console.log(this.state.user);
+        }
 }
     render() { 
         return (

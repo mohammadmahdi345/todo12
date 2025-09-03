@@ -798,3 +798,149 @@ input {
   transform: scale(0.98);
   box-shadow: 0 3px 7px rgba(255, 59, 46, 0.6);
 }
+
+
+
+
+
+
+/* ==== موبایل و تبلت کوچک — عرض 900px یا کمتر (نسخه کوچک‌شده نهایی) ==== */
+@media (max-width: 900px) {
+  /* جعبه‌بندی امن */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  /* کانتینرهای اصلی — محدود و وسط‌چین */
+  .login-wrapper,
+  .program-form,
+  .timeslot-form,
+  .tasks-container,
+  .task-status-container,
+  .motivational-card {
+    width: 100%;
+    max-width: 360px;        /* ← مهم: اندازه کلی فرم/کارت */
+    margin: 18px auto;       /* وسط‌چین */
+    padding: 12px 14px;      /* کم و معقول */
+    border-radius: 10px;
+  }
+
+  /* اگر می‌خواهی حتی جمع‌تر باشه، از 320px استفاده کن */
+  /* .login-wrapper, ... { max-width: 320px; } */
+
+  /* کارت تسک */
+  .task-card {
+    padding: 10px;
+    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* تیتر و توضیحات */
+  .task-title {
+    font-size: 1rem;
+    line-height: 1.25;
+    margin: 0 0 6px 0;
+  }
+  .task-description {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  /* زمان تسک */
+  .task-time {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* دکمه‌ها و لینک‌ها — نه تمام عرض صفحه، بلکه محدود و وسط‌چین */
+  button,
+  .task-button8,
+  .back-to-tasks-btn,
+  .task-status,
+  .next-quote-btn,
+  a.login-link,
+  a.program-link,
+  a.tasks-link {
+    display: block;
+    width: auto;                  /* اجازه می‌ده محتوا اندازه خودش رو بگیره */
+    max-width: 300px;             /* ← حداکثر عرض دکمه (کوچکتر کن اگر لازم) */
+    padding: 8px 12px;
+    font-size: 0.92rem;
+    margin: 8px auto;             /* مرکز-قرار دادن هر دکمه */
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* دکمه داخل کارت حتما وسط باشه (قبلاً align-self: flex-start بود) */
+  .task-button8 {
+    align-self: center !important;
+  }
+
+  /* ورودی‌ها (فیلدها) تمام عرض کانتینر باشن ولی کانتینر کوچیکه */
+  .program-input,
+  .form-input {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  /* نقل قول خوانا و وسط‌چین */
+  .quote-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* کارت انگیزشی */
+  .motivational-card {
+    background-size: cover;
+    padding: 14px;
+  }
+
+  /* مخفی‌سازی پلیر موسیقی روی موبایل */
+  .music-player-container {
+    display: none !important;
+  }
+
+  /* جلوگیری از overflow افقی */
+  html, body { max-width: 100%; overflow-x: hidden; }
+}
+
+/* ==== موبایل خیلی کوچک — زیر 480px (اگر لازم بود جمع‌تر) ==== */
+@media (max-width: 480px) {
+  .login-wrapper,
+  .program-form,
+  .timeslot-form,
+  .tasks-container,
+  .task-status-container,
+  .motivational-card {
+    max-width: 240px;    /* حتی کوچکتر */
+    padding: 7px 10px;
+    font-size: 0.88rem;
+    margin: 12px auto;
+  }
+
+  button,
+  .task-button8,
+  .back-to-tasks-btn,
+  .task-status,
+  .next-quote-btn,
+  a.login-link,
+  a.program-link,
+  a.tasks-link {
+    max-width: 240px;    /* حتی کوچکتر */
+    padding: 7px 10px;
+    font-size: 0.88rem;
+    margin: 6px auto;
+  }
+
+  .task-title { font-size: 0.95rem; }
+  .task-description { font-size: 0.85rem; }
+  .quote-text { font-size: 0.92rem; padding: 8px; }
+}
